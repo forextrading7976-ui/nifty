@@ -232,7 +232,7 @@ src="https://www.facebook.com/tr?id=1268395471869922&ev=PageView&noscript=1"
 
     <div class="profile">
         <!-- LOGO -->
-        <img src="channels4_profile.jpeglogo.png" alt="Logo">
+        <img src="channels4_profile.jpeg" alt="Logo">
 
         <div class="crowns">
             <span>👑</span>
