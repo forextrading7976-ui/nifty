@@ -31,6 +31,23 @@
     .disclaimer { color:#777984; font-size:12px; line-height:1.5; margin:24px auto 0; max-width:600px; }
     @media (max-width:420px) { .page{padding:70px 20px 28px;} .logo-wrap{width:210px;height:210px;margin-bottom:40px;} .logo{width:202px;height:202px;} .brand{margin-bottom:42px;} .join{min-height:88px;margin-bottom:70px;} .features{padding:18px 17px;border-radius:24px;} .feature{gap:18px;min-height:75px;} }
   </style>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1791005458652960');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1791005458652960&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
   <main class="page">
@@ -52,23 +69,25 @@
     </section>
     <p class="disclaimer">Trading involves market risk. This page is for informational purposes only and does not guarantee profits.</p>
   </main>
-  <script>
-    // IMPORTANT: replace the placeholder URL below with your real Telegram invite/channel link.
-    const TELEGRAM_URL = 'https://t.me/YourChannelName';
-    const button = document.getElementById('joinButton');
-    button.href = TELEGRAM_URL;
-    let seconds = 18;
-    const timer = document.getElementById('countdown');
-    const interval = setInterval(() => {
-      seconds -= 1;
-      if (seconds <= 0) {
-        clearInterval(interval);
-        timer.textContent = 'Opening Telegram...';
-        window.location.href = TELEGRAM_URL;
-      } else {
-        timer.textContent = `Auto joining in ${seconds} seconds...`;
-      }
-    }, 1000);
-  </script>
+```html
+<script>
+const TELEGRAM_URL = 'https://t.me/+FjlB02gnZZUwYzY1';
+const button = document.getElementById('joinButton');
+
+button.href = TELEGRAM_URL;
+
+button.addEventListener('click', function(event) {
+  event.preventDefault();
+
+  if (typeof fbq === 'function') {
+    fbq('track', 'Subscribe');
+  }
+
+  setTimeout(function() {
+    window.location.href = TELEGRAM_URL;
+  }, 800);
+});
+</script>
+```
 </body>
 </html>
