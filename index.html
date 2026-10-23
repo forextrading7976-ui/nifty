@@ -71,21 +71,34 @@ src="https://www.facebook.com/tr?id=1791005458652960&ev=PageView&noscript=1"
   </main>
 ```html
 <script>
-const TELEGRAM_URL = 'https://t.me/+FjlB02gnZZUwYzY1';
+const TELEGRAM_URL = 'https://t.me/+Fj1B02gnZZUwZY1';
+
+const countdown = document.getElementById('countdown');
 const button = document.getElementById('joinButton');
 
-button.href = TELEGRAM_URL;
+let seconds = 18;
 
-button.addEventListener('click', function(event) {
-  event.preventDefault();
+const timer = setInterval(function () {
+  seconds--;
 
+  if (countdown) {
+    countdown.textContent = seconds > 0
+      ? `Auto joining in ${seconds} seconds...`
+      : 'Opening Telegram...';
+  }
+
+  if (seconds <= 0) {
+    clearInterval(timer);
+    window.location.href = TELEGRAM_URL;
+  }
+}, 1000);
+
+button.addEventListener('click', function () {
   if (typeof fbq === 'function') {
     fbq('track', 'Subscribe');
   }
 
-  setTimeout(function() {
-    window.location.href = TELEGRAM_URL;
-  }, 800);
+  window.location.href = TELEGRAM_URL;
 });
 </script>
 ```
