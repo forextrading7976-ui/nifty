@@ -69,38 +69,3 @@ src="https://www.facebook.com/tr?id=1513693047643550&ev=PageView&noscript=1"
     </section>
     <p class="disclaimer">Trading involves market risk. This page is for informational purposes only and does not guarantee profits.</p>
   </main>
-```html
-<script>
-const TELEGRAM_URL = 'https://t.me/+FjlB02gnZZUwYzY1';
-
-const countdown = document.getElementById('countdown');
-const button = document.getElementById('joinButton');
-
-let seconds = 18;
-
-const timer = setInterval(function () {
-  seconds--;
-
-  if (countdown) {
-    countdown.textContent = seconds > 0
-      ? `Auto joining in ${seconds} seconds...`
-      : 'Opening Telegram...';
-  }
-
-  if (seconds <= 0) {
-    clearInterval(timer);
-    window.location.href = TELEGRAM_URL;
-  }
-}, 1000);
-
-button.addEventListener('click', function () {
-  if (typeof fbq === 'function') {
-    fbq('track', 'Subscribe');
-  }
-
-  window.location.href = TELEGRAM_URL;
-});
-</script>
-```
-</body>
-</html>
